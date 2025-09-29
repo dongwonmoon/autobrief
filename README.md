@@ -21,7 +21,7 @@ Auto-Brief는 복잡한 PDF 문서를 AI를 활용하여 자동으로 분석하�
 - **Python 3.11+**
 - **FastAPI**: 고성능 API 서버 구축
 - **LangChain**: LLM 애플리케이션 개발 프레임워크
-- **Google Gemini 1.5 Flash**: 문서 분석 및 질의응답을 위한 LLM
+- **Google Gemini 2.5 Flash**: 문서 분석 및 질의응답을 위한 LLM
 - **Ollama (nomic-embed-text)**: 텍스트 임베딩 모델
 - **FAISS**: 효율적인 유사도 검색을 위한 벡터 저장소
 - **Pydantic**: API 데이터 유효성 검사
