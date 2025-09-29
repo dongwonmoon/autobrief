@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-brief V3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="panel left-panel">
+            <header class="panel-header">
+                <h2>내 서재</h2>
+                <label for="file-upload" class="upload-btn" title="문서 추가">+</label>
+                <input type="file" id="file-upload" accept=".pdf" multiple hidden>
+            </header>
+            <ul id="document-list" class="document-list"></ul>
+        </aside>
+
+        <main class="panel main-panel">
+            <div id="welcome-view">
+                <h2>Auto-brief</h2>
+                <p>좌측에서 문서를 추가하거나 선택하여 분석을 시작하세요.</p>
+            </div>
+            <div id="analysis-view" class="hidden">
+                <header class="analysis-header">
+                    <h3 id="document-title"></h3>
+                    <nav class="tab-nav">
+                        <button class="tab-btn active" data-tab="summary">요약</button>
+                        <button class="tab-btn" data-tab="mindmap">마인드맵</button>
+                        <button class="tab-btn" data-tab="insights">인사이트</button>
+                    </nav>
+                </header>
+                <div class="tab-content">
+                    <div id="summary-content" class="tab-pane active"></div>
+                    <div id="mindmap-content" class="tab-pane">
+                        <div class="markmap"></div>
+                    </div>
+                    <div id="insights-content" class="tab-pane">
+                        <h4>주요 개념</h4>
+                        <div id="key-concepts" class="tag-container"></div>
+                        <h4>예상 질문</h4>
+                        <ul id="suggested-questions"></ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="panel right-panel">
+            <header class="panel-header">
+                <h2>AI 어시스턴트</h2>
+            </header>
+            <div id="chat-box" class="chat-box"></div>
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="서재 전체에 대해 질문...">
+                <button id="send-button">➤</button>
+            </div>
+        </aside>
+    </div>
+
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p id="loading-text"></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+    <script src="script.js"></script>
+</body>
+</html>
